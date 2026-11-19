@@ -6,11 +6,15 @@
 
 I use Python to explore data quality, service volume, Medicare charges, and payment patterns in publicly available Medicare data. The notebook focuses on aggregate checks and straightforward summaries and visualizations.
 
-## Dataset
+## Data Source and Sampling
 
-The source is the CMS [Medicare Physician & Other Practitioners — by Provider and Service](https://data.cms.gov/provider-summary-by-type-of-service/medicare-physician-other-practitioners/medicare-physician-other-practitioners-by-provider-and-service) dataset for calendar year 2024. The local file contains a nonrandom Maryland sample of 5,000 rows and 567 distinct NPIs. It was copied from a previously acquired sample and is not included in Git.
+This project uses publicly available 2024 [Medicare Physician & Other Practitioners — by Provider and Service](https://data.cms.gov/provider-summary-by-type-of-service/medicare-physician-other-practitioners/medicare-physician-other-practitioners-by-provider-and-service) data from the Centers for Medicare & Medicaid Services (CMS).
 
-Each source record summarizes one rendering provider × HCPCS code × place of service. I selected five blocks of 1,000 Maryland rows, sorted by rendering NPI, at offsets 0, 45,000, 90,000, 135,000, and 180,000. The previously verified Maryland-filtered row count was 228,520. I excluded HCPCS/CPT codes and descriptions from the downloaded sample as a licensing precaution; code-specific comparisons are therefore unavailable.
+The analysis examines a nonrandom sample of 5,000 Maryland records representing 567 distinct rendering provider NPIs.
+
+The sample was acquired using the CMS public API, with five 1,000-record blocks selected at predefined offsets after sorting by rendering NPI.
+
+The `download_data.py` script provides the data acquisition workflow. The raw CSV is excluded from GitHub, and the sampling process can be repeated, although results may differ if CMS updates the source data or changes the ordering of tied records.
 
 ## Tools
 
