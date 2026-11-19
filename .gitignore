@@ -1,0 +1,15 @@
+﻿# Local data and environments
+data/
+.venv/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Environment files
+.env
+.env.*
+!.env.example
