@@ -4,7 +4,13 @@
 
 ## Project Overview
 
-I use Python to explore data quality, service volume, Medicare charges, and payment patterns in publicly available Medicare data. The notebook focuses on aggregate checks and straightforward summaries and visualizations.
+I use Python and pandas to examine data quality, service volume, Medicare charges, and payment patterns in a nonrandom sample of 5,000 Maryland provider-service records from the 2024 CMS Medicare dataset.
+
+The analysis includes data validation, exploratory statistics, visualizations, and interquartile range (IQR) screening to identify unusually high average Medicare payments.
+
+**Key Finding:** Of the 5,000 records analyzed, 279 (5.58%) exceeded the global upper 1.5×IQR threshold for average Medicare payment.
+
+These results represent statistical outlier screening, not evidence of fraud, improper billing, or regulatory noncompliance. The analysis is descriptive and does not account for differences in service mix.
 
 ## Data Source and Sampling
 
